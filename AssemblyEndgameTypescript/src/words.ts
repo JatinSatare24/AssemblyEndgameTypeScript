@@ -1,4 +1,8 @@
-export const words: string[] = [
+/*
+CHALLENGE: Type this 'words' array
+*/
+
+export const words:string[] = [
   "about",
   "account",
   "across",
