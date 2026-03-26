@@ -1,21 +1,19 @@
 import { words } from "./words"
 
 /*
-CHALLENGE 1: Type the return value of getRandomWord()
-CHALLENGE 2: Type the randomIndex variable 
+CHALLENGE 1: Complete the getRandomIndex function
+CHALLENGE 2: Add type annotations where relevant
+CHALLENGE 3: Use getRandomIndex in getRandomWord and
+             getFarewellText
 */
-
-export function getRandomWord():string {
-    const randomIndex:number = Math.floor(Math.random() * words.length)
-    return words[randomIndex]
+function getRandomIndex(arr:string[]):number{
+    return Math.floor(Math.random() * arr.length)
 }
 
-/*
-CHALLENGE 1: Type the parameter of getFarwellText()
-CHALLENGE 2: Type the return value of getFarewellText()
-CHALLENGE 3: Type the options variable
-CHALLENGE 4: Type the randomIndex variable 
-*/
+export function getRandomWord():string {
+    return words[getRandomIndex(words)]
+}
+
 export function getFarewellText(language:string):string {
     const options:string[] = [
         `Farewell, ${language}`,
@@ -32,6 +30,5 @@ export function getFarewellText(language:string):string {
         `${language} has left the building`
     ];
 
-    const randomIndex:number = Math.floor(Math.random() * options.length);
-    return options[randomIndex];
+    return options[getRandomIndex(options)];
 }
